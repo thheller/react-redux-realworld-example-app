@@ -1,0 +1,22 @@
+;; shadow-cljs configuration
+{:source-paths
+ ["src/gen"]
+
+ :dependencies
+ []
+
+ :builds
+ {:app {:target :browser
+        :modules {:main {:entries ["/demo/index.js"]}}
+        :devtools {:http-root "public"
+                   :http-port 8020
+                   :async-require true
+                   ;; there is no cljs code so we don't need cljs support
+                   :enabled false
+                   :console-support false}}}}
+ 
+ 
+ 
+ 
+ 
+ 

@@ -1,3 +1,25 @@
+# shadow-cljs ... this is madness
+
+I wanted to see if I can compile a JS project with [shadow-cljs](https://github.com/thheller/shadow-cljs).
+
+Turns out I can.
+
+```
+npm install
+npm run babel
+npx shadow-cljs watch app
+
+open http://localhost:8020
+```
+
+I didn't bother trying `release` since externs are missing. Since this is not CLJS code we can't use Externs Inference. Really didn't want to bother with that but since `:dev` builds work there is no reason `release` builds wouldn't also work with proper externs. Can't use `:closure` for `npm` stuff since it bails out.
+
+```
+[2018-02-09 21:22:28 - SEVERE] node_modules/marked/lib/marked.js:1313: ERROR - The define function must be called as a top-level statement.
+  define(function() { return marked; });
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+```
+
 # ![React + Redux Example App](project-logo.png)
 
 > ### React + Redux codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the [RealWorld](https://github.com/gothinkster/realworld-example-apps) spec and API.

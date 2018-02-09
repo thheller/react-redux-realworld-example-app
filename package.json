@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "cross-env": "^4.0.0",
-    "react-scripts": "0.9.5"
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "shadow-cljs": "^2.1.5"
   },
   "dependencies": {
     "history": "^4.6.3",
@@ -23,9 +26,6 @@
     "superagent-promise": "^1.1.0"
   },
   "scripts": {
-    "start": "cross-env PORT=4100 react-scripts start",
-    "build": "react-scripts build",
-    "test": "cross-env PORT=4100 react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "babel": "babel src/js -d src/gen/demo"
   }
 }
